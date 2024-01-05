@@ -1,0 +1,1138 @@
+- category: date
+  functions:
+  - title: DATE
+    description: Returns the serial number of a particular date
+    call: DATE(2008, 7, 8)
+    result: 'Tue Jul 08 2008 00:00:00 GMT-0700 (PDT)'
+  - title: DATEVALUE
+    description: Converts a date in the form of text to a serial number
+    call: DATEVALUE('8/22/2011')
+    result: 'Mon Aug 22 2011 00:00:00 GMT-0700 (PDT)'
+  - title: DAY
+    description: Converts a serial number to a day of the month
+    call: DAY('15-Apr-11')
+    result: '15'
+  - title: DAYS
+    description: Returns the number of days between two dates
+    call: DAYS('3/15/11', '2/1/11')
+    result: '42'
+  - title: DAYS360
+    description: Calculates the number of days between two dates based on a 360-day year
+    call: DAYS360('1-Jan-11', '31-Dec-11')
+    result: '360'
+  - title: EDATE
+    description: Returns the serial number of the date that is the indicated number of months before or after the start date
+    call: EDATE('1/15/11', -1)
+    result: 'Wed Dec 15 2010 00:00:00 GMT-0800 (PST)'
+  - title: EOMONTH
+    description: Returns the serial number of the last day of the month before or after a specified number of months
+    call: EOMONTH('1/1/11', -3)
+    result: 'Sun Oct 31 2010 00:00:00 GMT-0700 (PDT)'
+  - title: HOUR
+    description: Converts a serial number to an hour
+    call: HOUR('7/18/2011 7:45:00 AM')
+    result: '7'
+  - title: MINUTE
+    description: Converts a serial number to a minute
+    call: MINUTE('2/1/2011 12:45:00 PM')
+    result: '45'
+  - title: ISOWEEKNUM
+    description: Returns the number of the ISO week number of the year for a given date
+    call: ISOWEEKNUM('3/9/2012')
+    result: '10'
+  - title: MONTH
+    description: Converts a serial number to a month
+    call: MONTH('15-Apr-11')
+    result: '4'
+  - title: NETWORKDAYS
+    description: Returns the number of whole workdays between two dates
+    call: NETWORKDAYS('10/1/2012', '3/1/2013', ['11/22/2012'])
+    result: '109'
+  - title: NETWORKDAYSINTL
+    call: NETWORKDAYSINTL('1/1/2006', '2/1/2006', 7, ['1/2/2006'])
+    result: '23'
+  - title: NOW
+    description: Returns the serial number of the current date and time
+    call: NOW()
+    result: 'Thu Feb 20 2020 23:02:55 GMT+0100 (Central European Standard Time)'
+  - title: SECOND
+    description: Converts a serial number to a second
+    call: SECOND('2/1/2011 4:48:18 PM')
+    result: '18'
+  - title: TIME
+    description: Returns the serial number of a particular time
+    call: TIME(16, 48, 10)
+    result: '0.7001157407407408'
+  - title: TIMEVALUE
+    description: Converts a time in the form of text to a serial number
+    call: TIMEVALUE('22-Aug-2011 6:35 AM')
+    result: '0.2743055555555556'
+  - title: TODAY
+    description: Returns the serial number of today's date
+    call: TODAY()
+    result: 'Thu Feb 20 2020 23:02:55 GMT+0100 (Central European Standard Time)'
+  - title: WEEKDAY
+    description: Converts a serial number to a day of the week
+    call: WEEKDAY('2/14/2008', 3)
+    result: '3'
+  - title: YEAR
+    description: Converts a serial number to a year
+    call: YEAR('7/5/2008')
+    result: '2008'
+  - title: WEEKNUM
+    description: Converts a serial number to a number representing where the week falls numerically with a year
+    call: WEEKNUM('3/9/2012', 2)
+    result: '11'
+  - title: WORKDAY
+    description: Returns the serial number of the date before or after a specified number of workdays
+    call: WORKDAY('10/1/2008', 151, ['11/26/2008', '12/4/2008'])
+    result: 'Mon May 04 2009 00:00:00 GMT-0700 (PDT)'
+  - title: WORKDAYINTL
+    call: WORKDAYINTL('1/1/2012', 30, 17)
+    result: 'Sun Feb 05 2012 00:00:00 GMT-0800 (PST)'
+  - title: YEARFRAC
+    description: Returns the year fraction representing the number of whole days between start_date and end_date
+    call: YEARFRAC('1/1/2012', '7/30/2012', 3)
+    result: '0.5780821917808219'
+- category: financial
+  functions:
+  - title: ACCRINT
+    description: Returns the accrued interest for a security that pays periodic interest
+    call: ACCRINT('01/01/2011', '02/01/2011', '07/01/2014', 0.1, 1000, 1, 0)
+    result: '350'
+  - title: CUMIPMT
+    description: Returns the cumulative interest paid between two periods
+    call: CUMIPMT(0.1/12, 30*12, 100000, 13, 24, 0)
+    result: '-9916.77251395708'
+  - title: CUMPRINC
+    description: Returns the cumulative principal paid on a loan between two periods
+    call: CUMPRINC(0.1/12, 30*12, 100000, 13, 24, 0)
+    result: '-614.0863271085149'
+  - title: DB
+    description: Returns the depreciation of an asset for a specified period by using the fixed-declining balance method
+    call: DB(1000000, 100000, 6, 1, 6)
+    result: '159500'
+  - title: DDB
+    description: Returns the depreciation of an asset for a specified period by using the double-declining balance method or some other method that you specify
+    call: DDB(1000000, 100000, 6, 1, 1.5)
+    result: '250000'
+  - title: DOLLARDE
+    description: Converts a dollar price, expressed as a fraction, into a dollar price, expressed as a decimal number
+    call: DOLLARDE(1.1, 16)
+    result: '1.625'
+  - title: DOLLARFR
+    description: Converts a dollar price, expressed as a decimal number, into a dollar price, expressed as a fraction
+    call: DOLLARFR(1.625, 16)
+    result: '1.1'
+  - title: EFFECT
+    description: Returns the effective annual interest rate
+    call: EFFECT(0.1, 4)
+    result: '0.10381289062499977'
+  - title: FV
+    description: Returns the future value of an investment
+    call: FV(0.1/12, 10, -100, -1000, 0)
+    result: '2124.874409194097'
+  - title: FVSCHEDULE
+    description: Returns the future value of an initial principal after applying a series of compound interest rates
+    call: FVSCHEDULE(100, [0.09,0.1,0.11])
+    result: '133.08900000000003'
+  - title: IPMT
+    description: Returns the interest payment for an investment for a given period
+    call: IPMT(0.1/12, 6, 2*12, 100000, 1000000, 0)
+    result: '928.8235718400465'
+  - title: IRR
+    description: Returns the internal rate of return for a series of cash flows
+    call: IRR([-75000,12000,15000,18000,21000,24000], 0.075)
+    result: '0.05715142887178447'
+  - title: ISPMT
+    description: Calculates the interest paid during a specific period of an investment
+    call: ISPMT(0.1/12, 6, 2*12, 100000)
+    result: '-625'
+  - title: MIRR
+    description: Returns the internal rate of return where positive and negative cash flows are financed at different rates
+    call: MIRR([-75000,12000,15000,18000,21000,24000], 0.1, 0.12)
+    result: '0.07971710360838036'
+  - title: NOMINAL
+    description: Returns the annual nominal interest rate
+    call: NOMINAL(0.1, 4)
+    result: '0.09645475633778045'
+  - title: NPER
+    description: Returns the number of periods for an investment
+    call: NPER(0.1/12, -100, -1000, 10000, 0)
+    result: '63.39385422740764'
+  - title: NPV
+    description: Returns the net present value of an investment based on a series of periodic cash flows and a discount rate
+    call: NPV(0.1, -10000, 2000, 4000, 8000)
+    result: '1031.3503176012546'
+  - title: PDURATION
+    description: Returns the number of periods required by an investment to reach a specified value
+    call: PDURATION(0.1, 1000, 2000)
+    result: '7.272540897341714'
+  - title: PMT
+    description: Returns the periodic payment for an annuity
+    call: PMT(0.1/12, 2*12, 100000, 1000000, 0)
+    result: '-42426.08563793503'
+  - title: PPMT
+    description: Returns the payment on the principal for an investment for a given period
+    call: PPMT(0.1/12, 6, 2*12, 100000, 1000000, 0)
+    result: '-43354.909209775076'
+  - title: PV
+    description: Returns the present value of an investment
+    call: PV(0.1/12, 2*12, 1000, 10000, 0)
+    result: '-29864.950264779152'
+  - title: RATE
+    description: Returns the interest rate per period of an annuity
+    call: RATE(2*12, -1000, -10000, 100000, 0, 0.1)
+    result: '0.06517891177181533'
+- category: engineering
+  functions:
+  - title: BIN2DEC
+    description: Converts a binary number to decimal
+    call: BIN2DEC(101010)
+    result: '42'
+  - title: BIN2HEX
+    description: Converts a binary number to hexadecimal
+    call: BIN2HEX(101010)
+    result: '2a'
+  - title: BIN2OCT
+    description: Converts a binary number to octal
+    call: BIN2OCT(101010)
+    result: '52'
+  - title: BITAND
+    description: Returns a 'Bitwise And' of two numbers
+    call: BITAND(42, 24)
+    result: '8'
+  - title: BITLSHIFT
+    description: Returns a value number shifted left by shift_amount bits
+    call: BITLSHIFT(42, 24)
+    result: '704643072'
+  - title: BITOR
+    description: Returns a bitwise OR of 2 numbers
+    call: BITOR(42, 24)
+    result: '58'
+  - title: BITRSHIFT
+    description: Returns a value number shifted right by shift_amount bits
+    call: BITRSHIFT(42, 2)
+    result: '10'
+  - title: BITXOR
+    description: Returns a bitwise 'Exclusive Or' of two numbers
+    call: BITXOR(42, 24)
+    result: '50'
+  - title: COMPLEX
+    description: Converts real and imaginary coefficients into a complex number
+    call: COMPLEX(3, 4)
+    result: '3+4i'
+  - title: CONVERT
+    description: Converts a number from one measurement system to another
+    call: CONVERT(64, 'kibyte', 'bit')
+    result: '524288'
+  - title: DEC2BIN
+    description: Converts a decimal number to binary
+    call: DEC2BIN(42)
+    result: '101010'
+  - title: DEC2HEX
+    description: Converts a decimal number to hexadecimal
+    call: DEC2HEX(42)
+    result: '2a'
+  - title: DEC2OCT
+    description: Converts a decimal number to octal
+    call: DEC2OCT(42)
+    result: '52'
+  - title: DELTA
+    description: Tests whether two values are equal
+    call: DELTA(42, 42)
+    result: '1'
+  - title: ERF
+    description: Returns the error function
+    call: ERF(1)
+    result: '0.8427007929497149'
+  - title: ERFC
+    description: Returns the complementary error function
+    call: ERFC(1)
+    result: '0.1572992070502851'
+  - title: GESTEP
+    description: Tests whether a number is greater than a threshold value
+    call: GESTEP(42, 24)
+    result: '1'
+  - title: HEX2BIN
+    description: Converts a hexadecimal number to binary
+    call: HEX2BIN('2a')
+    result: '101010'
+  - title: HEX2DEC
+    description: Converts a hexadecimal number to decimal
+    call: HEX2DEC('2a')
+    result: '42'
+  - title: HEX2OCT
+    description: Converts a hexadecimal number to octal
+    call: HEX2OCT('2a')
+    result: '52'
+  - title: IMABS
+    description: Returns the absolute value (modulus) of a complex number
+    call: IMABS('3+4i')
+    result: '5'
+  - title: IMAGINARY
+    description: Returns the imaginary coefficient of a complex number
+    call: IMAGINARY('3+4i')
+    result: '4'
+  - title: IMARGUMENT
+    description: Returns the argument theta, an angle expressed in radians
+    call: IMARGUMENT('3+4i')
+    result: '0.9272952180016122'
+  - title: IMCONJUGATE
+    description: Returns the complex conjugate of a complex number
+    call: IMCONJUGATE('3+4i')
+    result: '3-4i'
+  - title: IMCOS
+    description: Returns the cosine of a complex number
+    call: IMCOS('1+i')
+    result: '0.8337300251311491-0.9888977057628651i'
+  - title: IMCOSH
+    description: Returns the hyperbolic cosine of a complex number
+    call: IMCOSH('1+i')
+    result: '0.8337300251311491+0.9888977057628651i'
+  - title: IMCOT
+    description: Returns the cotangent of a complex number
+    call: IMCOT('1+i')
+    result: '0.21762156185440265-0.8680141428959249i'
+  - title: IMCSC
+    description: Returns the cosecant of a complex number
+    call: IMCSC('1+i')
+    result: '0.6215180171704283-0.3039310016284264i'
+  - title: IMCSCH
+    description: Returns the hyperbolic cosecant of a complex number
+    call: IMCSCH('1+i')
+    result: '0.3039310016284264-0.6215180171704283i'
+  - title: IMDIV
+    description: Returns the quotient of two complex numbers
+    call: IMDIV('1+2i', '3+4i')
+    result: '0.44+0.08i'
+  - title: IMEXP
+    description: Returns the exponential of a complex number
+    call: IMEXP('1+i')
+    result: '1.4686939399158851+2.2873552871788423i'
+  - title: IMLN
+    description: Returns the natural logarithm of a complex number
+    call: IMLN('1+i')
+    result: '0.3465735902799727+0.7853981633974483i'
+  - title: IMLOG10
+    description: Returns the base-10 logarithm of a complex number
+    call: IMLOG10('1+i')
+    result: '0.1505149978319906+0.3410940884604603i'
+  - title: IMLOG2
+    description: Returns the base-2 logarithm of a complex number
+    call: IMLOG2('1+i')
+    result: '0.5000000000000001+1.1330900354567985i'
+  - title: IMPOWER
+    description: Returns a complex number raised to an integer power
+    call: IMPOWER('1+i', 2)
+    result: '1.2246063538223775e-16+2.0000000000000004i'
+  - title: IMPRODUCT
+    description: Returns the product of complex numbers
+    call: IMPRODUCT('1+2i', '3+4i', '5+6i')
+    result: '-85+20i'
+  - title: IMREAL
+    description: Returns the real coefficient of a complex number
+    call: IMREAL('3+4i')
+    result: '3'
+  - title: IMSEC
+    description: Returns the secant of a complex number
+    call: IMSEC('1+i')
+    result: '0.4983370305551868+0.591083841721045i'
+  - title: IMSECH
+    description: Returns the hyperbolic secant of a complex number
+    call: IMSECH('1+i')
+    result: '0.4983370305551868-0.591083841721045i'
+  - title: IMSIN
+    description: Returns the sine of a complex number
+    call: IMSIN('1+i')
+    result: '1.2984575814159773+0.6349639147847361i'
+  - title: IMSINH
+    description: Returns the hyperbolic sine of a complex number
+    call: IMSINH('1+i')
+    result: '0.6349639147847361+1.2984575814159773i'
+  - title: IMSQRT
+    description: Returns the square root of a complex number
+    call: IMSQRT('1+i')
+    result: '1.0986841134678098+0.45508986056222733i'
+  - title: IMSUB
+    description: Returns the difference between two complex numbers
+    call: IMSUB('3+4i', '1+2i')
+    result: '2+2i'
+  - title: IMSUM
+    description: Returns the sum of complex numbers
+    call: IMSUM('1+2i', '3+4i', '5+6i')
+    result: '9+12i'
+  - title: IMTAN
+    description: Returns the tangent of a complex number
+    call: IMTAN('1+i')
+    result: '0.2717525853195117+1.0839233273386946i'
+  - title: OCT2BIN
+    description: Converts an octal number to binary
+    call: OCT2BIN('52')
+    result: '101010'
+  - title: OCT2DEC
+    description: Converts an octal number to decimal
+    call: OCT2DEC('52')
+    result: '42'
+  - title: OCT2HEX
+    description: Converts an octal number to hexadecimal
+    call: OCT2HEX('52')
+    result: '2a'
+- category: logical
+  functions:
+  - title: AND
+    description: Returns TRUE if all of its arguments are TRUE
+    call: AND(true, false, true)
+    result: 'false'
+  - title: FALSE
+    description: Returns the logical value FALSE
+    call: FALSE()
+    result: 'false'
+  - title: IF
+    description: Specifies a logical test to perform
+    call: IF(true, 'Hello!', 'Goodbye!')
+    result: 'Hello!'
+  - title: IFS
+    description: Checks whether one or more conditions are met and returns a value that corresponds to the first TRUE condition.
+    call: IFS(false, 'Hello!', true, 'Goodbye!')
+    result: 'Goodbye!'
+  - title: IFERROR
+    description: Returns a value you specify if a formula evaluates to an error; otherwise, returns the result of the formula
+    call: IFERROR('#DIV/0!', 'Error')
+    result: 'Error'
+  - title: IFNA
+    description: Returns the value you specify if the expression resolves to #N/A, otherwise returns the result of the expression
+    call: IFNA('#N/A', 'Error')
+    result: 'Error'
+  - title: NOT
+    description: Reverses the logic of its argument
+    call: NOT(true)
+    result: 'false'
+  - title: OR
+    description: Returns TRUE if any argument is TRUE
+    call: OR(true, false, true)
+    result: 'true'
+  - title: SWITCH
+    description: Evaluates an expression against a list of values and returns the result corresponding to the first matching value. If there is no match, an optional default value may be returned.
+    call: SWITCH(7, 9, 'Nine', 7, 'Seven')
+    result: 'Seven'
+  - title: TRUE
+    description: Returns the logical value TRUE
+    call: TRUE()
+    result: 'true'
+  - title: XOR
+    description: Returns a logical exclusive OR of all arguments
+    call: XOR(true, false, true)
+    result: 'false'
+- category: math
+  functions:
+  - title: ABS
+    description: Returns the absolute value of a number
+    call: ABS(-4)
+    result: '4'
+  - title: ACOS
+    description: Returns the arccosine of a number
+    call: ACOS(-0.5)
+    result: '2.0943951023931957'
+  - title: ACOSH
+    description: Returns the inverse hyperbolic cosine of a number
+    call: ACOSH(10)
+    result: '2.993222846126381'
+  - title: ACOT
+    description: Returns the arccotangent of a number
+    call: ACOT(2)
+    result: '0.46364760900080615'
+  - title: ACOTH
+    description: Returns the hyperbolic arccotangent of a number
+    call: ACOTH(6)
+    result: '0.16823611831060645'
+  - title: AGGREGATE
+    description: Returns an aggregate in a list or database
+    call: AGGREGATE(9, 4, [-5,15], [32,'Hello World!'])
+    result: '10,32'
+  - title: ARABIC
+    description: Converts a Roman number to Arabic, as a number
+    call: ARABIC('MCMXII')
+    result: '1912'
+  - title: ASIN
+    description: Returns the arcsine of a number
+    call: ASIN(-0.5)
+    result: '-0.5235987755982988'
+  - title: ASINH
+    description: Returns the inverse hyperbolic sine of a number
+    call: ASINH(-2.5)
+    result: '-1.6472311463710965'
+  - title: ATAN
+    description: Returns the arctangent of a number
+    call: ATAN(1)
+    result: '0.7853981633974483'
+  - title: ATAN2
+    description: Returns the arctangent from x- and y-coordinates
+    call: ATAN2(-1, -1)
+    result: '-2.356194490192345'
+  - title: ATANH
+    description: Returns the inverse hyperbolic tangent of a number
+    call: ATANH(-0.1)
+    result: '-0.10033534773107562'
+  - title: BASE
+    description: Converts a number into a text representation with the given radix (base)
+    call: BASE(15, 2, 10)
+    result: '0000001111'
+  - title: CEILING
+    description: Rounds a number to the nearest integer or to the nearest multiple of significance
+    call: CEILING(-5.5, 2, -1)
+    result: '-6'
+  - title: CEILINGMATH
+    call: CEILINGMATH(-5.5, 2, -1)
+    result: '-6'
+  - title: CEILINGPRECISE
+    call: CEILINGPRECISE(-4.1, -2)
+    result: '-4'
+  - title: COMBIN
+    description: Returns the number of combinations for a given number of objects
+    call: COMBIN(8, 2)
+    result: '28'
+  - title: COMBINA
+    description: . Returns the number of combinations with repetitions for a given number of items
+    call: COMBINA(4, 3)
+    result: '20'
+  - title: COS
+    description: Returns the cosine of a number
+    call: COS(1)
+    result: '0.5403023058681398'
+  - title: COSH
+    description: Returns the hyperbolic cosine of a number
+    call: COSH(1)
+    result: '1.5430806348152437'
+  - title: COT
+    description: Returns the hyperbolic cosine of a number
+    call: COT(30)
+    result: '-0.15611995216165922'
+  - title: COTH
+    description: Returns the cotangent of an angle
+    call: COTH(2)
+    result: '1.0373147207275482'
+  - title: CSC
+    description: Returns the cosecant of an angle
+    call: CSC(15)
+    result: '1.5377805615408537'
+  - title: CSCH
+    description: Returns the hyperbolic cosecant of an angle
+    call: CSCH(1.5)
+    result: '0.46964244059522464'
+  - title: DECIMAL
+    description: Converts a text representation of a number in a given base into a decimal number
+    call: DECIMAL('FF', 16)
+    result: '255'
+  - title: ERF
+    description: Returns the error function
+    call: ERF(1)
+    result: '0.8427007929497149'
+  - title: ERFC
+    description: Returns the complementary error function
+    call: ERFC(1)
+    result: '0.1572992070502851'
+  - title: EVEN
+    description: Rounds a number up to the nearest even integer
+    call: EVEN(-1)
+    result: '-2'
+  - title: EXP
+    description: Returns e raised to the power of a given number
+    call: EXP(1)
+    result: '2.718281828459045'
+  - title: FACT
+    description: Returns the factorial of a number
+    call: FACT(5)
+    result: '120'
+  - title: FACTDOUBLE
+    description: Returns the double factorial of a number
+    call: FACTDOUBLE(7)
+    result: '105'
+  - title: FLOOR
+    description: Rounds a number down, toward zero. In Excel 2007 and Excel 2010, this is a Math and trigonometry function.
+    call: FLOOR(-3.1)
+    result: '-4'
+  - title: FLOORMATH
+    call: FLOORMATH(-4.1, -2, -1)
+    result: '-4'
+  - title: FLOORPRECISE
+    call: FLOORPRECISE(-3.1, -2)
+    result: '-4'
+  - title: GCD
+    description: Returns the greatest common divisor
+    call: GCD(24, 36, 48)
+    result: '12'
+  - title: INT
+    description: Rounds a number down to the nearest integer
+    call: INT(-8.9)
+    result: '-9'
+  - title: ISEVEN
+    description: Returns TRUE if the number is even
+    call: ISEVEN(-2.5)
+    result: 'true'
+  - title: ISOCEILING
+    call: ISOCEILING(-4.1, -2)
+    result: '-4'
+  - title: ISODD
+    description: Returns TRUE if the number is odd
+    call: ISODD(-2.5)
+    result: 'false'
+  - title: LCM
+    description: Returns the least common multiple
+    call: LCM(24, 36, 48)
+    result: '144'
+  - title: LN
+    description: Returns the natural logarithm of a number
+    call: LN(86)
+    result: '4.454347296253507'
+  - title: LOG
+    description: Returns the logarithm of a number to a specified base
+    call: LOG(8, 2)
+    result: '3'
+  - title: LOG10
+    description: Returns the base-10 logarithm of a number
+    call: LOG10(100000)
+    result: '5'
+  - title: MOD
+    description: Returns the remainder from division
+    call: MOD(3, -2)
+    result: '-1'
+  - title: MROUND
+    description: Returns a number rounded to the desired multiple
+    call: MROUND(-10, -3)
+    result: '-9'
+  - title: MULTINOMIAL
+    description: Returns the multinomial of a set of numbers
+    call: MULTINOMIAL(2, 3, 4)
+    result: '1260'
+  - title: ODD
+    description: Rounds a number up to the nearest odd integer
+    call: ODD(-1.5)
+    result: '-3'
+  - title: POWER
+    description: Returns the result of a number raised to a power
+    call: POWER(5, 2)
+    result: '25'
+  - title: PRODUCT
+    description: Multiplies its arguments
+    call: PRODUCT(5, 15, 30)
+    result: '2250'
+  - title: QUOTIENT
+    description: Returns the integer portion of a division
+    call: QUOTIENT(-10, 3)
+    result: '-3'
+  - title: RADIANS
+    description: Converts degrees to radians
+    call: RADIANS(180)
+    result: '3.141592653589793'
+  - title: RAND
+    description: Returns a random number between 0 and 1
+    call: RAND()
+    result: '[Random real number greater between 0 and 1]'
+  - title: RANDBETWEEN
+    description: Returns a random number between the numbers you specify
+    call: RANDBETWEEN(-1, 1)
+    result: '[Random integer between bottom and top]'
+  - title: ROUND
+    description: Rounds a number to a specified number of digits
+    call: ROUND(626.3, -3)
+    result: '1000'
+  - title: ROUNDDOWN
+    description: Rounds a number down, toward zero
+    call: ROUNDDOWN(-3.14159, 2)
+    result: '-3.14'
+  - title: ROUNDUP
+    description: Rounds a number up, away from zero
+    call: ROUNDUP(-3.14159, 2)
+    result: '-3.15'
+  - title: SEC
+    description: Returns the secant of an angle
+    call: SEC(45)
+    result: '1.9035944074044246'
+  - title: SECH
+    description: Returns the hyperbolic secant of an angle
+    call: SECH(45)
+    result: '5.725037161098787e-20'
+  - title: SIGN
+    description: Returns the sign of a number
+    call: SIGN(-0.00001)
+    result: '-1'
+  - title: SIN
+    description: Returns the sine of the given angle
+    call: SIN(1)
+    result: '0.8414709848078965'
+  - title: SINH
+    description: Returns the hyperbolic sine of a number
+    call: SINH(1)
+    result: '1.1752011936438014'
+  - title: SQRT
+    description: Returns a positive square root
+    call: SQRT(16)
+    result: '4'
+  - title: SQRTPI
+    description: Returns the square root of (number * pi)
+    call: SQRTPI(2)
+    result: '2.5066282746310002'
+  - title: SUBTOTAL
+    description: Returns a subtotal in a list or database
+    call: SUBTOTAL(9, [-5,15], [32,'Hello World!'])
+    result: '10,32'
+  - title: SUM
+    description: Adds its arguments
+    call: SUM(-5, 15, 32, 'Hello World!')
+    result: '42'
+  - title: SUMIF
+    description: Adds the cells specified by a given criteria
+    call: SUMIF([2,4,8,16], '>5')
+    result: '24'
+  - title: SUMIFS
+    description: Adds the cells in a range that meet multiple criteria
+    call: SUMIFS([2,4,8,16], [1,2,3,4], '>=2', [1,2,4,8], '<=4')
+    result: '12'
+  - title: SUMPRODUCT
+    description: Returns the sum of the products of corresponding array components
+    call: SUMPRODUCT([[1,2],[3,4]], [[1,0],[0,1]])
+    result: '5'
+  - title: SUMSQ
+    description: Returns the sum of the squares of the arguments
+    call: SUMSQ(3, 4)
+    result: '25'
+  - title: SUMX2MY2
+    description: Returns the sum of the difference of squares of corresponding values in two arrays
+    call: SUMX2MY2([1,2], [3,4])
+    result: '-20'
+  - title: SUMX2PY2
+    description: Returns the sum of the sum of squares of corresponding values in two arrays
+    call: SUMX2PY2([1,2], [3,4])
+    result: '30'
+  - title: SUMXMY2
+    description: Returns the sum of squares of differences of corresponding values in two arrays
+    call: SUMXMY2([1,2], [3,4])
+    result: '8'
+  - title: TAN
+    description: Returns the tangent of a number
+    call: TAN(1)
+    result: '1.5574077246549023'
+  - title: TANH
+    description: Returns the hyperbolic tangent of a number
+    call: TANH(-2)
+    result: '-0.9640275800758168'
+  - title: TRUNC
+    description: Truncates a number to an integer
+    call: TRUNC(-8.9)
+    result: '-8'
+- category: statistical
+  functions:
+  - title: AVEDEV
+    description: Returns the average of the absolute deviations of data points from their mean
+    call: AVEDEV([2,4], [8,16])
+    result: '4.5'
+  - title: AVERAGE
+    description: Returns the average of its arguments
+    call: AVERAGE([2,4], [8,16])
+    result: '7.5'
+  - title: AVERAGEA
+    description: Returns the average of its arguments, including numbers, text, and logical values
+    call: AVERAGEA([2,4], [8,16])
+    result: '7.5'
+  - title: AVERAGEIF
+    description: Returns the average (arithmetic mean) of all the cells in a range that meet a given criteria
+    call: AVERAGEIF([2,4,8,16], '>5', [1, 2, 3, 4])
+    result: '3.5'
+  - title: AVERAGEIFS
+    description: Returns the average (arithmetic mean) of all cells that meet multiple criteria.
+    call: AVERAGEIFS([2,4,8,16], [1,2,3,4], '>=2', [1,2,4,8], '<=4')
+    result: '6'
+  - title: BETADIST
+    description: Returns the beta cumulative distribution function. In Excel 2007, this is a Statistical function.
+    call: BETADIST(2, 8, 10, true, 1, 3)
+    result: '0.6854705810117458'
+  - title: BETAINV
+    description: Returns the inverse of the cumulative distribution function for a specified beta distribution. In Excel 2007, this is a Statistical function.
+    call: BETAINV(0.6854705810117458, 8, 10, 1, 3)
+    result: '1.9999999999999998'
+  - title: BINOMDIST
+    description: Returns the individual term binomial distribution probability. In Excel 2007, this is a Statistical function.
+    call: BINOMDIST(6, 10, 0.5, false)
+    result: '0.205078125'
+  - title: CORREL
+    description: Returns the correlation coefficient between two data sets
+    call: CORREL([3,2,4,5,6], [9,7,12,15,17])
+    result: '0.9970544855015815'
+  - title: COUNT
+    description: Counts how many numbers are in the list of arguments
+    call: COUNT([1,2], [3,4])
+    result: '4'
+  - title: COUNTA
+    description: Counts how many values are in the list of arguments
+    call: COUNTA([1, null, 3, 'a', '', 'c'])
+    result: '4'
+  - title: COUNTBLANK
+    description: Counts the number of blank cells within a range
+    call: COUNTBLANK([1, null, 3, 'a', '', 'c'])
+    result: '2'
+  - title: COUNTIF
+    description: Counts the number of cells within a range that meet the given criteria
+    call: COUNTIF(['Caen', 'Melbourne', 'Palo Alto', 'Singapore'], 'a')
+    result: '3'
+  - title: COUNTIFS
+    description: Counts the number of cells within a range that meet multiple criteria
+    call: COUNTIFS([2,4,8,16], [1,2,3,4], '>=2', [1,2,4,8], '<=4')
+    result: '2'
+  - title: COUNTUNIQUE
+    call: COUNTUNIQUE([1,1,2,2,3,3])
+    result: '3'
+  - title: COVARIANCEP
+    call: COVARIANCEP([3,2,4,5,6], [9,7,12,15,17])
+    result: '5.2'
+  - title: COVARIANCES
+    call: COVARIANCES([2,4,8], [5,11,12])
+    result: '9.666666666666668'
+  - title: DEVSQ
+    description: Returns the sum of squares of deviations
+    call: DEVSQ([2,4,8,16])
+    result: '115'
+  - title: EXPONDIST
+    description: Returns the exponential distribution. In Excel 2007, this is a Statistical function.
+    call: EXPONDIST(0.2, 10, true)
+    result: '0.8646647167633873'
+  - title: FDIST
+    description: Returns the F probability distribution. In Excel 2007, this is a Statistical function.
+    call: FDIST(15.2069, 6, 4, false)
+    result: '0.0012237917087831735'
+  - title: FINV
+    description: Returns the inverse of the F probability distribution. In Excel 2007this is a Statistical function.
+    call: FINV(0.01, 6, 4)
+    result: '0.10930991412457851'
+  - title: FISHER
+    description: Returns the Fisher transformation
+    call: FISHER(0.75)
+    result: '0.9729550745276566'
+  - title: FISHERINV
+    description: Returns the inverse of the Fisher transformation
+    call: FISHERINV(0.9729550745276566)
+    result: '0.75'
+  - title: FORECAST
+    description: Returns a value along a linear trend. In Excel 2016, this function is replaced with FORECAST.LINEAR as part of the new Forecasting functions, but it's still available for compatibility with earlier versions.
+    call: FORECAST(30, [6,7,9,15,21], [20,28,31,38,40])
+    result: '10.607253086419755'
+  - title: FREQUENCY
+    description: Returns a frequency distribution as a vertical array
+    call: FREQUENCY([79,85,78,85,50,81,95,88,97], [70,79,89])
+    result: '1,2,4,2'
+  - title: GAMMA
+    description: Returns the Gamma function value
+    call: GAMMA(2.5)
+    result: '1.3293403919101043'
+  - title: GAMMALN
+    description: Returns the natural logarithm of the gamma function, Γ(x)
+    call: GAMMALN(10)
+    result: '12.801827480081961'
+  - title: GAUSS
+    description: Returns 0.5 less than the standard normal cumulative distribution
+    call: GAUSS(2)
+    result: '0.4772498680518208'
+  - title: GEOMEAN
+    description: Returns the geometric mean
+    call: GEOMEAN([2,4], [8,16])
+    result: '5.656854249492381'
+  - title: GROWTH
+    description: Returns values along an exponential trend
+    call: GROWTH([2,4,8,16], [1,2,3,4], [5])
+    result: '32.00000000000003'
+  - title: HARMEAN
+    description: Returns the harmonic mean
+    call: HARMEAN([2,4], [8,16])
+    result: '4.266666666666667'
+  - title: HYPGEOMDIST
+    description: Returns the hypergeometric distribution. In Excel 2007, this is a Statistical function.
+    call: HYPGEOMDIST(1, 4, 8, 20, false)
+    result: '0.3632610939112487'
+  - title: INTERCEPT
+    description: Returns the intercept of the linear regression line
+    call: INTERCEPT([2,3,9,1,8], [6,5,11,7,5])
+    result: '0.04838709677419217'
+  - title: KURT
+    description: Returns the kurtosis of a data set
+    call: KURT([3,4,5,2,3,4,5,6,4,7])
+    result: '-0.15179963720841627'
+  - title: LARGE
+    description: Returns the k-th largest value in a data set
+    call: LARGE([3,5,3,5,4,4,2,4,6,7], 3)
+    result: '5'
+  - title: LINEST
+    description: Returns the parameters of a linear trend
+    call: LINEST([1,9,5,7], [0,4,2,3], true, true)
+    result: '2,1'
+  - title: LOGNORMDIST
+    description: Returns the cumulative lognormal distribution
+    call: LOGNORMDIST(4, 3.5, 1.2, true)
+    result: '0.0390835557068005'
+  - title: LOGNORMINV
+    call: LOGNORMINV(0.0390835557068005, 3.5, 1.2, true)
+    result: '4.000000000000001'
+  - title: MAX
+    description: Returns the maximum value in a list of arguments
+    call: MAX([0.1,0.2], [0.4,0.8], [true, false])
+    result: '0.8'
+  - title: MAXA
+    description: Returns the maximum value in a list of arguments, including numbers, text, and logical values
+    call: MAXA([0.1,0.2], [0.4,0.8], [true, false])
+    result: '1'
+  - title: MEDIAN
+    description: Returns the median of the given numbers
+    call: MEDIAN([1,2,3], [4,5,6])
+    result: '3.5'
+  - title: MIN
+    description: Returns the minimum value in a list of arguments
+    call: MIN([0.1,0.2], [0.4,0.8], [true, false])
+    result: '0.1'
+  - title: MINA
+    description: Returns the smallest value in a list of arguments, including numbers, text, and logical values
+    call: MINA([0.1,0.2], [0.4,0.8], [true, false])
+    result: '0'
+  - title: MODEMULT
+    call: MODEMULT([1,2,3,4,3,2,1,2,3])
+    result: '2,3'
+  - title: MODESNGL
+    call: MODESNGL([1,2,3,4,3,2,1,2,3])
+    result: '2'
+  - title: NORMDIST
+    description: Returns the normal cumulative distribution. In Excel 2007, this is a Statistical function.
+    call: NORMDIST(42, 40, 1.5, true)
+    result: '0.9087887802741321'
+  - title: NORMINV
+    description: Returns the inverse of the normal cumulative distribution
+    call: NORMINV(0.9087887802741321, 40, 1.5)
+    result: '42'
+  - title: NORMSDIST
+    description: Returns the standard normal cumulative distribution. In Excel 2007, this is a Statistical function.
+    call: NORMSDIST(1, true)
+    result: '0.8413447460685429'
+  - title: NORMSINV
+    description: Returns the inverse of the standard normal cumulative distribution. In Excel 2007, this is a Statistical function.
+    call: NORMSINV(0.8413447460685429)
+    result: '1.0000000000000002'
+  - title: PEARSON
+    description: Returns the Pearson product moment correlation coefficient
+    call: PEARSON([9,7,5,3,1], [10,6,1,5,3])
+    result: '0.6993786061802354'
+  - title: PERCENTILEEXC
+    call: PERCENTILEEXC([1,2,3,4], 0.3)
+    result: '1.5'
+  - title: PERCENTILEINC
+    call: PERCENTILEINC([1,2,3,4], 0.3)
+    result: '1.9'
+  - title: PERCENTRANKEXC
+    call: PERCENTRANKEXC([1,2,3,4], 2, 2)
+    result: '0.4'
+  - title: PERCENTRANKINC
+    call: PERCENTRANKINC([1,2,3,4], 2, 2)
+    result: '0.33'
+  - title: PERMUT
+    description: Returns the number of permutations for a given number of objects
+    call: PERMUT(100, 3)
+    result: '970200'
+  - title: PERMUTATIONA
+    description: Returns the number of permutations for a given number of objects (with repetitions) that can be selected from the total objects
+    call: PERMUTATIONA(4, 3)
+    result: '64'
+  - title: PHI
+    description: Returns the value of the density function for a standard normal distribution
+    call: PHI(0.75)
+    result: '0.30113743215480443'
+  - title: POISSONDIST
+    call: POISSONDIST(2, 5, true)
+    result: '0.12465201948308113'
+  - title: PROB
+    description: Returns the probability that values in a range are between two limits
+    call: PROB([1,2,3,4], [0.1,0.2,0.2,0.1], 2, 3)
+    result: '0.4'
+  - title: QUARTILEEXC
+    call: QUARTILEEXC([1,2,3,4], 1)
+    result: '1.25'
+  - title: QUARTILEINC
+    call: QUARTILEINC([1,2,3,4], 1)
+    result: '1.75'
+  - title: RANKAVG
+    call: RANKAVG(4, [2,4,4,8,8,16], false)
+    result: '4.5'
+  - title: RANKEQ
+    call: RANKEQ(4, [2,4,4,8,8,16], false)
+    result: '4'
+  - title: RSQ
+    description: Returns the square of the Pearson product moment correlation coefficient
+    call: RSQ([9,7,5,3,1], [10,6,1,5,3])
+    result: '0.4891304347826088'
+  - title: SKEW
+    description: Returns the skewness of a distribution
+    call: SKEW([3,4,5,2,3,4,5,6,4,7])
+    result: '0.3595430714067974'
+  - title: SKEWP
+    call: SKEWP([3,4,5,2,3,4,5,6,4,7])
+    result: '0.303193339354144'
+  - title: SLOPE
+    description: Returns the slope of the linear regression line
+    call: SLOPE([1,9,5,7], [0,4,2,3])
+    result: '2'
+  - title: SMALL
+    description: Returns the k-th smallest value in a data set
+    call: SMALL([3,5,3,5,4,4,2,4,6,7], 3)
+    result: '3'
+  - title: STANDARDIZE
+    description: Returns a normalized value
+    call: STANDARDIZE(42, 40, 1.5)
+    result: '1.3333333333333333'
+  - title: STDEVA
+    description: Estimates standard deviation based on a sample, including numbers, text, and logical values
+    call: STDEVA([2,4], [8,16], [true, false])
+    result: '6.013872850889572'
+  - title: STDEVP
+    description: Calculates standard deviation based on the entire population. In Excel 2007, this is a Statistical function.
+    call: STDEVP([2,4], [8,16], [true, false])
+    result: '5.361902647381804'
+  - title: STDEVPA
+    description: Calculates standard deviation based on the entire population, including numbers, text, and logical values
+    call: STDEVPA([2,4], [8,16], [true, false])
+    result: '5.489889697333535'
+  - title: STDEVS
+    call: STDEVS([2,4], [8,16], [true, false])
+    result: '6.191391873668904'
+  - title: STEYX
+    description: Returns the standard error of the predicted y-value for each x in the regression
+    call: STEYX([2,3,9,1,8,7,5], [6,5,11,7,5,4,4])
+    result: '3.305718950210041'
+  - title: TDIST
+    description: Returns the Student's t-distribution
+    call: TDIST(60, 1, true)
+    result: '0.9946953263673741'
+  - title: TINV
+    description: Returns the inverse of the Student's t-distribution
+    call: TINV(0.9946953263673741, 1)
+    result: '59.99999999996535'
+  - title: TRIMMEAN
+    description: Returns the mean of the interior of a data set
+    call: TRIMMEAN([4,5,6,7,2,3,4,5,1,2,3], 0.2)
+    result: '3.7777777777777777'
+  - title: VARA
+    description: Estimates variance based on a sample, including numbers, text, and logical values
+    call: VARA([2,4], [8,16], [true, false])
+    result: '36.16666666666667'
+  - title: VARP
+    description: Calculates variance based on the entire population. In Excel 2007, this is a Statistical function.
+    call: VARP([2,4], [8,16], [true, false])
+    result: '28.75'
+  - title: VARPA
+    description: Calculates variance based on the entire population, including numbers, text, and logical values
+    call: VARPA([2,4], [8,16], [true, false])
+    result: '30.13888888888889'
+  - title: VARS
+    call: VARS([2,4], [8,16], [true, false])
+    result: '38.333333333333336'
+  - title: WEIBULLDIST
+    call: WEIBULLDIST(105, 20, 100, true)
+    result: '0.9295813900692769'
+  - title: ZTEST
+    description: Returns the one-tailed probability-value of a z-test. In Excel 2007, this is a Statistical function.
+    call: ZTEST([3,6,7,8,6,5,4,2,1,9], 4)
+    result: '0.09057419685136381'
+- category: text
+  functions:
+  - title: CHAR
+    description: Returns the character specified by the code number
+    call: CHAR(65)
+    result: 'A'
+  - title: CLEAN
+    description: Removes all nonprintable characters from text
+    call: CLEAN('Monthly report')
+    result: 'Monthly report'
+  - title: CODE
+    description: Returns a numeric code for the first character in a text string
+    call: CODE('A')
+    result: '65'
+  - title: CONCATENATE
+    description: Joins several text items into one text item
+    call: CONCATENATE('Andreas', ' ', 'Hauser')
+    result: 'Andreas Hauser'
+  - title: EXACT
+    description: Checks to see if two text values are identical
+    call: EXACT('Word', 'word')
+    result: 'false'
+  - title: FIND
+    call: FIND('M', 'Miriam McGovern', 3)
+    result: '8'
+  - title: LEFT
+    call: LEFT('Sale Price', 4)
+    result: 'Sale'
+  - title: LEN
+    call: LEN('Phoenix, AZ')
+    result: '11'
+  - title: LOWER
+    description: Converts text to lowercase
+    call: LOWER('E. E. Cummings')
+    result: 'e. e. cummings'
+  - title: MID
+    call: MID('Fluid Flow', 7, 20)
+    result: 'Flow'
+  - title: NUMBERVALUE
+    description: Converts text to number in a locale-independent manner
+    call: NUMBERVALUE('2.500,27', ',', '.')
+    result: '2500.27'
+  - title: PROPER
+    description: Capitalizes the first letter in each word of a text value
+    call: PROPER('this is a TITLE')
+    result: 'This Is A Title'
+  - title: REGEXEXTRACT
+    call: REGEXEXTRACT('Palo Alto', 'Alto')
+    result: 'Alto'
+  - title: REGEXMATCH
+    call: REGEXMATCH('Palo Alto', 'Alto')
+    result: 'true'
+  - title: REGEXREPLACE
+    call: REGEXREPLACE('Sutoiku', 'utoiku', 'TOIC')
+    result: 'STOIC'
+  - title: REPLACE
+    call: REPLACE('abcdefghijk', 6, 5, '*')
+    result: 'abcde*k'
+  - title: REPT
+    description: Repeats text a given number of times
+    call: REPT('*-', 3)
+    result: '*-*-*-'
+  - title: RIGHT
+    call: RIGHT('Sale Price', 5)
+    result: 'Price'
+  - title: ROMAN
+    description: Converts an arabic numeral to roman, as text
+    call: ROMAN(499)
+    result: 'CDXCIX'
+  - title: SEARCH
+    call: SEARCH('margin', 'Profit Margin')
+    result: '8'
+  - title: SPLIT
+    call: SPLIT('A,B,C', ',')
+    result: 'A,B,C'
+  - title: SUBSTITUTE
+    description: Substitutes new text for old text in a text string
+    call: SUBSTITUTE('Quarter 1, 2011', '1', '2', 3)
+    result: 'Quarter 1, 2012'
+  - title: T
+    description: Converts its arguments to text
+    call: T('Rainfall')
+    result: 'Rainfall'
+  - title: TRIM
+    description: Removes spaces from text
+    call: TRIM(' First Quarter Earnings ')
+    result: 'First Quarter Earnings'
+  - title: UNICHAR
+    description: Returns the Unicode character that is references by the given numeric value
+    call: UNICHAR(66)
+    result: 'B'
+  - title: UNICODE
+    description: Returns the number (code point) that corresponds to the first character of the text
+    call: UNICODE('B')
+    result: '66'
+  - title: UPPER
+    description: Converts text to uppercase
+    call: UPPER('total')
+    result: 'TOTAL'
+

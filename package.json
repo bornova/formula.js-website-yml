@@ -1,0 +1,17 @@
+{
+  "name": "parser",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "devDependencies": {
+    "fs-extra": "^11.2.0",
+    "got": "^14.0.0",
+    "jsdom": "^23.1.0"
+  },
+  "scripts": {
+    "build": "node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
